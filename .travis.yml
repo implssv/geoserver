@@ -7,6 +7,7 @@ language: java
 before_install:
   - rm ~/.m2/settings.xml
   - unset _JAVA_OPTIONS
+install: true
 env:
   global:
     - MAVEN_OPTS=-Xmx512m
