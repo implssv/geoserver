@@ -11,7 +11,7 @@ env:
   global:
     - MAVEN_OPTS=-Xmx512m
 script:
-  - mvn -f src/pom.xml -B -U -T4 -fae -Prelease clean install && mvn -f src/community/pom.xml -B -U -T4 -fae -DskipTests -Prelease -PcommunityRelease clean install
+  - travis_wait 50 mvn -f src/pom.xml -B -U -T4 -fae -Prelease clean install && travis_wait 30 mvn -f src/community/pom.xml -B -U -T4 -fae -DskipTests -Prelease -PcommunityRelease clean install
 notifications:
   email:
     on_success: never
